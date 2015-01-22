@@ -80,15 +80,11 @@ php composer.phar install
 
 ## `composer.lock` - 잠금 설정 파일
 
-After installing the dependencies, Composer writes the list of the exact
-versions it installed into a `composer.lock` file. This locks the project
-to those specific versions.
+의존 패키지를 설치한 뒤, 컴포저는 설치된 패키지들의 정확한 버전을 `composer.lock` 파일로 생성합니다. 이 파일은 프로젝트를 특정 버전으로 잠급니다.
 
-**Commit your application's `composer.lock` (along with `composer.json`) into version control.**
+**애플리케이션의 `composer.lock`(`composer.json` 파일과 함께) 파일을 버전 관리 시스템에 커밋하십시오**
 
-This is important because the `install` command checks if a lock file is present,
-and if it is, it downloads the versions specified there (regardless of what `composer.json`
-says).
+이것은 `install`명령이 lock 파일의 여부를 검사한 뒤, 존재할 경우 `composer.json`파일과 관계 없이 lock파일에 정의된 버전을 다운로드 받기에 중요합니다.
 
 This means that anyone who sets up the project will download the exact
 same version of the dependencies. Your CI server, production machines, other
